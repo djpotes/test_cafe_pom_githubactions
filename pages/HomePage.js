@@ -10,7 +10,7 @@ class HomePage{
         this.CartLink = Selector('a').withText('Shopping cart')
         this.MyAccountLink = Selector('a').withText('My account')
         this.LogoutLink = Selector('a').withText('Log out');
-        this.currenyList = Selector("select#customerCurrency")
+        this.currencyList = Selector("select#customerCurrency")
       }
       get productSearch() { 
         return Selector("input[id='small-searchterms']"); 
@@ -25,7 +25,7 @@ class HomePage{
     
       async changeCurrency(curreny){
         await t
-         .click(currenyList)
+         .click(this.currencyList)
          .click(Selector('option', { text: curreny }));
     }
 }
